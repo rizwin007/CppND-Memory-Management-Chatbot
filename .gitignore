@@ -1,1 +1,4 @@
 .github/**
+build/**
+CMakeFiles/**
+CMakeCache.txt

@@ -4,7 +4,15 @@ set(CMAKE_CXX_STANDARD 17)
 
 project(Membot)
 
-find_package(wxWidgets REQUIRED COMPONENTS core base)
+if (CMAKE_HOST_WIN32)
+
+  set(wxWidgets_ROOT_DIR "C:/msys64/mingw64/wxWidgets")
+
+  set(wxWidgets_LIB_DIR "C:/msys64/mingw64/wxWidgets/lib/gcc_x64_lib")
+
+endif()
+
+find_package(wxWidgets COMPONENTS core base REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 file(GLOB project_SRCS src/*.cpp)
